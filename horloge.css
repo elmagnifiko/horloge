@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: hsl(240,3.45%,94.31%);
+    font: 1rem sans-serif;
+}
+
+.horloge {
+    position: relative;
+}
+
+.cercle {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: hsl(210,14.81%,21.18%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    box-shadow: 22px 13px 70px black
+   
+
+}
+
+.cercle::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    border: 1px solid white;
+    z-index: 100000;
+    background-color: black;
+}
+
+.cercle span {
+    position: absolute;
+    text-align: center;
+    inset: 25px;
+    transform: rotate(calc(30deg * var(--i)));
+}
+
+.cercle span b {
+    font-size: 3rem;
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+
+.aiguille {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+
+}
+
+
+.aiguille i {
+position: absolute;
+width: 3px;
+height: 50%;
+background: var(--clr);
+transform-origin: bottom;
+margin-top: 10px;
+transform: scaleY(0.5);
+opacity: 75%;
+
+}
+
+.aiguille::nth-child(1) i{
+    width: 2px;
+}
+   
+.aiguille::nth-child(2) i{
+     width: 6px;   
+}
+
+.aiguille2 {
+    width: 260px;
+    height: 260px;
+    z-index: 9;
+}
+.aiguille3 {
+    width: 180px;
+    height: 180px;
+    z-index: 8;
+}
+
+.aiguille::before {
+    content: '';
+    position: absolute;
+    top: -8.5px;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr),
+    0 0 60px var(--clr);
+
+}
